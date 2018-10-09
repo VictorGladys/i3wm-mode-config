@@ -1,0 +1,10 @@
+# define mode keys
+bindsym i mode "interactive"
+bindsym v mode "visual"
+bindsym r mode "resize"
+
+bindsym z mode "z"
+bindsym Z mode "z"
+
+bindsym q mode "$mode_system"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"

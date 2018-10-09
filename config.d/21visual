@@ -1,0 +1,3 @@
+bindsym Return mode "normal"
+bindsym Escape mode "normal"
+bindsym $mod mode "normal"

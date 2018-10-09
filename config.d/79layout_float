@@ -1,0 +1,28 @@
+# split in horizontal orientation
+#bindsym | split h
+bindsym Shift+backslash split h
+
+# split in vertical orientation
+bindsym Shift+minus split v
+#bindsym _ split v
+
+# container layout
+bindsym f fullscreen toggle
+bindsym t layout tabbed
+bindsym w layout toggle split
+
+# focus the parent container
+bindsym a focus parent
+
+# focus the child container
+bindsym x focus child
+
+# These two can keep the $mod, since I won't be using them often
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position NOT currently in use
+# floating_modifier button1

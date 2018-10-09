@@ -1,0 +1,3 @@
+#set the wallpaper
+exec --no-startup-id feh --bg-scale ~/Pictures/stereograms/Stereogram_Tut_Random_Dot_Shark.png
+

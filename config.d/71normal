@@ -1,0 +1,35 @@
+##Internal stuff
+# remake and reload the configuration file
+bindsym $mod+Shift+c exec --no-startup-id cat ~/.config/i3/config.d/* > ~/.config/i3/config; exec --no-startup-id i3-migrate-config-to-v4 ~/.config/i3/config ~/.config/i3/config; exec --no-startup-id reseti3; reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# bindsym $mod+Shift+r restart, exec --no-startup-id xdotool key --clearmodifiers n
+# bindsym $mod+Shift+r restart; mode $mod+Shift+n
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+n mode "normal"
+
+# floating quick use xprop
+bindsym Print exec $term --class floatingterm -x "pipe 'xprop -len 60 -spy' 'less'"
+
+## i3 related content
+# start a terminal
+bindsym o exec $term; mode "interactive"
+
+# move the (Tilda-like but terminator) scratchpad terminal to or from the scratchpad
+bindsym grave scratchpad show; mode "interactive"
+
+# start dmenu (a program launcher)
+bindsym d exec dmenu_run
+
+#TODO # yank current selection maybe to scratchpad? or maybe as a textcopy
+# bindsym y
+
+# execute a bash command
+set $bcmd "exec $term --class floatingterm -xh '%s'"
+bindsym Shift+semicolon exec --no-startup-id i3-input -F $bcmd -P ":"
+#bindsym Shift+semicolon mode "interactive", exec --no-startup-id i3-input -F $bcmd -P ":"
+
+# search and represent
+set $gcmd "exec $term --class floatingterm -x \\\"pipe 'grep' '%s'\\\""
+bindsym slash mode exec --no-startup-id i3-input -F $gcmd -P "/"
+#bindsym slash mode "interactive", exec --no-startup-id i3-input -F $gcmd -P "/"

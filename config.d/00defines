@@ -1,0 +1,58 @@
+# set $terminal to be used
+#
+# run the following if wanting to use another terminal
+# sudo update-alternatives --set x-terminal-emulator "$(which name_of_terminal)"
+set $mod Mod4
+set $term gnome-terminal
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# we don't want focus to follow mouse
+focus_follows_mouse no
+
+# assign workplace name
+set $ws1 "1: comms-app"
+exec --no-startup-id i3-msg 'rename workspace 1 to ' $ws1
+set $ws2  "2: comms-web"
+set $ws3  "3: calendar"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8: bb"
+set $ws9  "9: cmus"
+set $ws10 "10: steam"
+
+# application to workplace assignment
+assign [class="Telegram|telegram"] $ws1
+assign [title="qt-skype"] $ws1
+
+assign [title="qt-gmail"] $ws2
+assign [title="qt-slack"] $ws2
+assign [title="qt-drive"] $ws2
+
+assign [title="qt-calendar"] $ws3
+
+assign [title="qt-blackboard"] $ws8
+assign [class="cmus"] $ws9
+assign [class="Steam"] $ws10
+
+# terms that tell us they are floatingterms should be floating
+for_window [class="floatingterm"] floating enable, border pixel 3
+# Resolution of lenovo X1 is 2560x1440 pixels
+
+# we want instances of terminator to be tilda-like dropdown terminals
+for_window [class="Terminator"] move scratchpad, floating enable, move absolute position 0 px 0 px, resize set 2560 800

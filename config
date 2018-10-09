@@ -1,0 +1,1921 @@
+# set $terminal to be used
+#
+# run the following if wanting to use another terminal
+# sudo update-alternatives --set x-terminal-emulator "$(which name_of_terminal)"
+set $mod Mod4
+set $term gnome-terminal
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# we don't want focus to follow mouse
+focus_follows_mouse no
+
+# assign workplace name
+set $ws1 "1: comms-app"
+exec --no-startup-id i3-msg 'rename workspace 1 to ' $ws1
+set $ws2  "2: comms-web"
+set $ws3  "3: calendar"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8: bb"
+set $ws9  "9: cmus"
+set $ws10 "10: steam"
+
+# application to workplace assignment
+assign [class="Telegram|telegram"] $ws1
+assign [title="qt-skype"] $ws1
+
+assign [title="qt-gmail"] $ws2
+assign [title="qt-slack"] $ws2
+assign [title="qt-drive"] $ws2
+
+assign [title="qt-calendar"] $ws3
+
+assign [title="qt-blackboard"] $ws8
+assign [class="cmus"] $ws9
+assign [class="Steam"] $ws10
+
+# terms that tell us they are floatingterms should be floating
+for_window [class="floatingterm"] floating enable, border pixel 3
+# Resolution of lenovo X1 is 2560x1440 pixels
+
+# we want instances of terminator to be tilda-like dropdown terminals
+for_window [class="Terminator"] move scratchpad, floating enable, move absolute position 0 px 0 px, resize set 2560 800
+#set the wallpaper
+exec --no-startup-id feh --bg-scale ~/Pictures/stereograms/Stereogram_Tut_Random_Dot_Shark.png
+
+# startup applications
+exec --no-startup-id nm-applet
+exec /home/victor/bin/myxautolock
+#exec /home/victor/bin/myxautolocksuspend
+#exec --no-startup-id blueman-applet
+exec --no-startup-id telegram-desktop
+#exec --no-startup-id screenkey
+exec screenkey -p fixed -s small --mods-mode emacs --bak-mode baked --key-mode translated --persist -t 300 -p fixed -g 200x40+2360+1370
+
+# -R so no restoring old windows in this session basedir so qt browsers don't share same commands and title, title so they are sorted correctly
+exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-gmail/    --target window --qt-arg title qt-gmail www.gmail.com
+#exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-slack/    --target window --qt-arg title qt-slack asacbestuur.slack.com
+#exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-drive/    --target window --qt-arg title qt-drive drive.google.com
+#exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-bb/       --target window --qt-arg title qt-blackboard blackboard.ic.uva.nl/webapps/login/
+exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-calendar/ --target window --qt-arg title qt-calendar calendar.google.com
+
+# compton allows for transparency in i3
+exec --no-startup-id compton
+
+# our tilda-like terminal
+exec terminator -c dropdown -p dropdown
+# at startup immediately enter normal mode and never leave it. this way keypresses while in normal mode don't filter down to interactive
+
+# mode "default" {
+exec --no-startup-id xdotool key --clearmodifiers n
+# for i in {8..255}; do echo -e "bindcode $i mode \"normal\""; done > 38return_nonkeybinds
+
+bindcode 8 mode "normal"
+bindcode 9 mode "normal"
+bindcode 10 mode "normal"
+bindcode 11 mode "normal"
+bindcode 12 mode "normal"
+bindcode 13 mode "normal"
+bindcode 14 mode "normal"
+bindcode 15 mode "normal"
+bindcode 16 mode "normal"
+bindcode 17 mode "normal"
+bindcode 18 mode "normal"
+bindcode 19 mode "normal"
+bindcode 20 mode "normal"
+bindcode 21 mode "normal"
+bindcode 22 mode "normal"
+bindcode 23 mode "normal"
+bindcode 24 mode "normal"
+bindcode 25 mode "normal"
+bindcode 26 mode "normal"
+bindcode 27 mode "normal"
+bindcode 28 mode "normal"
+bindcode 29 mode "normal"
+bindcode 30 mode "normal"
+bindcode 31 mode "normal"
+bindcode 32 mode "normal"
+bindcode 33 mode "normal"
+bindcode 34 mode "normal"
+bindcode 35 mode "normal"
+bindcode 36 mode "normal"
+bindcode 37 mode "normal"
+bindcode 38 mode "normal"
+bindcode 39 mode "normal"
+bindcode 40 mode "normal"
+bindcode 41 mode "normal"
+bindcode 42 mode "normal"
+bindcode 43 mode "normal"
+bindcode 44 mode "normal"
+bindcode 45 mode "normal"
+bindcode 46 mode "normal"
+bindcode 47 mode "normal"
+bindcode 48 mode "normal"
+bindcode 49 mode "normal"
+bindcode 50 mode "normal"
+bindcode 51 mode "normal"
+bindcode 52 mode "normal"
+bindcode 53 mode "normal"
+bindcode 54 mode "normal"
+bindcode 55 mode "normal"
+bindcode 56 mode "normal"
+bindcode 57 mode "normal"
+bindcode 58 mode "normal"
+bindcode 59 mode "normal"
+bindcode 60 mode "normal"
+bindcode 61 mode "normal"
+bindcode 62 mode "normal"
+bindcode 63 mode "normal"
+bindcode 64 mode "normal"
+bindcode 65 mode "normal"
+bindcode 66 mode "normal"
+bindcode 67 mode "normal"
+bindcode 68 mode "normal"
+bindcode 69 mode "normal"
+bindcode 70 mode "normal"
+bindcode 71 mode "normal"
+bindcode 72 mode "normal"
+bindcode 73 mode "normal"
+bindcode 74 mode "normal"
+bindcode 75 mode "normal"
+bindcode 76 mode "normal"
+bindcode 77 mode "normal"
+bindcode 78 mode "normal"
+bindcode 79 mode "normal"
+bindcode 80 mode "normal"
+bindcode 81 mode "normal"
+bindcode 82 mode "normal"
+bindcode 83 mode "normal"
+bindcode 84 mode "normal"
+bindcode 85 mode "normal"
+bindcode 86 mode "normal"
+bindcode 87 mode "normal"
+bindcode 88 mode "normal"
+bindcode 89 mode "normal"
+bindcode 90 mode "normal"
+bindcode 91 mode "normal"
+bindcode 92 mode "normal"
+bindcode 93 mode "normal"
+bindcode 94 mode "normal"
+bindcode 95 mode "normal"
+bindcode 96 mode "normal"
+bindcode 97 mode "normal"
+bindcode 98 mode "normal"
+bindcode 99 mode "normal"
+bindcode 100 mode "normal"
+bindcode 101 mode "normal"
+bindcode 102 mode "normal"
+bindcode 103 mode "normal"
+bindcode 104 mode "normal"
+bindcode 105 mode "normal"
+bindcode 106 mode "normal"
+bindcode 107 mode "normal"
+bindcode 108 mode "normal"
+bindcode 109 mode "normal"
+bindcode 110 mode "normal"
+bindcode 111 mode "normal"
+bindcode 112 mode "normal"
+bindcode 113 mode "normal"
+bindcode 114 mode "normal"
+bindcode 115 mode "normal"
+bindcode 116 mode "normal"
+bindcode 117 mode "normal"
+bindcode 118 mode "normal"
+bindcode 119 mode "normal"
+bindcode 120 mode "normal"
+bindcode 121 mode "normal"
+bindcode 122 mode "normal"
+bindcode 123 mode "normal"
+bindcode 124 mode "normal"
+bindcode 125 mode "normal"
+bindcode 126 mode "normal"
+bindcode 127 mode "normal"
+bindcode 128 mode "normal"
+bindcode 129 mode "normal"
+bindcode 130 mode "normal"
+bindcode 131 mode "normal"
+bindcode 132 mode "normal"
+bindcode 133 mode "normal"
+bindcode 134 mode "normal"
+bindcode 135 mode "normal"
+bindcode 136 mode "normal"
+bindcode 137 mode "normal"
+bindcode 138 mode "normal"
+bindcode 139 mode "normal"
+bindcode 140 mode "normal"
+bindcode 141 mode "normal"
+bindcode 142 mode "normal"
+bindcode 143 mode "normal"
+bindcode 144 mode "normal"
+bindcode 145 mode "normal"
+bindcode 146 mode "normal"
+bindcode 147 mode "normal"
+bindcode 148 mode "normal"
+bindcode 149 mode "normal"
+bindcode 150 mode "normal"
+bindcode 151 mode "normal"
+bindcode 152 mode "normal"
+bindcode 153 mode "normal"
+bindcode 154 mode "normal"
+bindcode 155 mode "normal"
+bindcode 156 mode "normal"
+bindcode 157 mode "normal"
+bindcode 158 mode "normal"
+bindcode 159 mode "normal"
+bindcode 160 mode "normal"
+bindcode 161 mode "normal"
+bindcode 162 mode "normal"
+bindcode 163 mode "normal"
+bindcode 164 mode "normal"
+bindcode 165 mode "normal"
+bindcode 166 mode "normal"
+bindcode 167 mode "normal"
+bindcode 168 mode "normal"
+bindcode 169 mode "normal"
+bindcode 170 mode "normal"
+bindcode 171 mode "normal"
+bindcode 172 mode "normal"
+bindcode 173 mode "normal"
+bindcode 174 mode "normal"
+bindcode 175 mode "normal"
+bindcode 176 mode "normal"
+bindcode 177 mode "normal"
+bindcode 178 mode "normal"
+bindcode 179 mode "normal"
+bindcode 180 mode "normal"
+bindcode 181 mode "normal"
+bindcode 182 mode "normal"
+bindcode 183 mode "normal"
+bindcode 184 mode "normal"
+bindcode 185 mode "normal"
+bindcode 186 mode "normal"
+bindcode 187 mode "normal"
+bindcode 188 mode "normal"
+bindcode 189 mode "normal"
+bindcode 190 mode "normal"
+bindcode 191 mode "normal"
+bindcode 192 mode "normal"
+bindcode 193 mode "normal"
+bindcode 194 mode "normal"
+bindcode 195 mode "normal"
+bindcode 196 mode "normal"
+bindcode 197 mode "normal"
+bindcode 198 mode "normal"
+bindcode 199 mode "normal"
+bindcode 200 mode "normal"
+bindcode 201 mode "normal"
+bindcode 202 mode "normal"
+bindcode 203 mode "normal"
+bindcode 204 mode "normal"
+bindcode 205 mode "normal"
+bindcode 206 mode "normal"
+bindcode 207 mode "normal"
+bindcode 208 mode "normal"
+bindcode 209 mode "normal"
+bindcode 210 mode "normal"
+bindcode 211 mode "normal"
+bindcode 212 mode "normal"
+bindcode 213 mode "normal"
+bindcode 214 mode "normal"
+bindcode 215 mode "normal"
+bindcode 216 mode "normal"
+bindcode 217 mode "normal"
+bindcode 218 mode "normal"
+bindcode 219 mode "normal"
+bindcode 220 mode "normal"
+bindcode 221 mode "normal"
+bindcode 222 mode "normal"
+bindcode 223 mode "normal"
+bindcode 224 mode "normal"
+bindcode 225 mode "normal"
+bindcode 226 mode "normal"
+bindcode 227 mode "normal"
+bindcode 228 mode "normal"
+bindcode 229 mode "normal"
+bindcode 230 mode "normal"
+bindcode 231 mode "normal"
+bindcode 232 mode "normal"
+bindcode 233 mode "normal"
+bindcode 234 mode "normal"
+bindcode 235 mode "normal"
+bindcode 236 mode "normal"
+bindcode 237 mode "normal"
+bindcode 238 mode "normal"
+bindcode 239 mode "normal"
+bindcode 240 mode "normal"
+bindcode 241 mode "normal"
+bindcode 242 mode "normal"
+bindcode 243 mode "normal"
+bindcode 244 mode "normal"
+bindcode 245 mode "normal"
+bindcode 246 mode "normal"
+bindcode 247 mode "normal"
+bindcode 248 mode "normal"
+bindcode 249 mode "normal"
+bindcode 250 mode "normal"
+bindcode 251 mode "normal"
+bindcode 252 mode "normal"
+bindcode 253 mode "normal"
+bindcode 254 mode "normal"
+bindcode 255 mode "normal"
+# }
+
+mode "visual" {
+bindsym Return mode "normal"
+bindsym Escape mode "normal"
+bindsym $mod mode "normal"
+# for i in {8..255}; do echo -e "bindcode $i mode \"normal\""; done > 38return_nonkeybinds
+
+bindcode 8 mode "normal"
+# bindcode 9 mode "normal" # Escape
+bindcode 10 mode "normal"
+bindcode 11 mode "normal"
+bindcode 12 mode "normal"
+bindcode 13 mode "normal"
+bindcode 14 mode "normal"
+bindcode 15 mode "normal"
+bindcode 16 mode "normal"
+bindcode 17 mode "normal"
+bindcode 18 mode "normal"
+bindcode 19 mode "normal"
+bindcode 20 mode "normal"
+bindcode 21 mode "normal"
+bindcode 22 mode "normal"
+bindcode 23 mode "normal"
+bindcode 24 mode "normal"
+bindcode 25 mode "normal"
+bindcode 26 mode "normal"
+bindcode 27 mode "normal"
+bindcode 28 mode "normal"
+bindcode 29 mode "normal"
+bindcode 30 mode "normal"
+bindcode 31 mode "normal"
+bindcode 32 mode "normal"
+bindcode 33 mode "normal"
+bindcode 34 mode "normal"
+bindcode 35 mode "normal"
+# bindcode 36 mode "normal" # Return
+bindcode 37 mode "normal"
+bindcode 38 mode "normal"
+bindcode 39 mode "normal"
+bindcode 40 mode "normal"
+bindcode 41 mode "normal"
+bindcode 42 mode "normal"
+bindcode 43 mode "normal"
+bindcode 44 mode "normal"
+bindcode 45 mode "normal"
+bindcode 46 mode "normal"
+bindcode 47 mode "normal"
+bindcode 48 mode "normal"
+bindcode 49 mode "normal"
+bindcode 50 mode "normal"
+bindcode 51 mode "normal"
+bindcode 52 mode "normal"
+bindcode 53 mode "normal"
+bindcode 54 mode "normal"
+bindcode 55 mode "normal"
+bindcode 56 mode "normal"
+bindcode 57 mode "normal"
+bindcode 58 mode "normal"
+bindcode 59 mode "normal"
+bindcode 60 mode "normal"
+bindcode 61 mode "normal"
+bindcode 62 mode "normal"
+bindcode 63 mode "normal"
+bindcode 64 mode "normal"
+bindcode 65 mode "normal"
+bindcode 66 mode "normal"
+bindcode 67 mode "normal"
+bindcode 68 mode "normal"
+bindcode 69 mode "normal"
+bindcode 70 mode "normal"
+bindcode 71 mode "normal"
+bindcode 72 mode "normal"
+bindcode 73 mode "normal"
+bindcode 74 mode "normal"
+bindcode 75 mode "normal"
+bindcode 76 mode "normal"
+bindcode 77 mode "normal"
+bindcode 78 mode "normal"
+bindcode 79 mode "normal"
+bindcode 80 mode "normal"
+bindcode 81 mode "normal"
+bindcode 82 mode "normal"
+bindcode 83 mode "normal"
+bindcode 84 mode "normal"
+bindcode 85 mode "normal"
+bindcode 86 mode "normal"
+bindcode 87 mode "normal"
+bindcode 88 mode "normal"
+bindcode 89 mode "normal"
+bindcode 90 mode "normal"
+bindcode 91 mode "normal"
+bindcode 92 mode "normal"
+bindcode 93 mode "normal"
+bindcode 94 mode "normal"
+bindcode 95 mode "normal"
+bindcode 96 mode "normal"
+bindcode 97 mode "normal"
+bindcode 98 mode "normal"
+bindcode 99 mode "normal"
+bindcode 100 mode "normal"
+bindcode 101 mode "normal"
+bindcode 102 mode "normal"
+bindcode 103 mode "normal"
+bindcode 104 mode "normal"
+bindcode 105 mode "normal"
+bindcode 106 mode "normal"
+bindcode 107 mode "normal"
+bindcode 108 mode "normal"
+bindcode 109 mode "normal"
+bindcode 110 mode "normal"
+bindcode 111 mode "normal"
+bindcode 112 mode "normal"
+bindcode 113 mode "normal"
+bindcode 114 mode "normal"
+bindcode 115 mode "normal"
+bindcode 116 mode "normal"
+bindcode 117 mode "normal"
+bindcode 118 mode "normal"
+bindcode 119 mode "normal"
+bindcode 120 mode "normal"
+bindcode 121 mode "normal"
+bindcode 122 mode "normal"
+bindcode 123 mode "normal"
+bindcode 124 mode "normal"
+bindcode 125 mode "normal"
+bindcode 126 mode "normal"
+bindcode 127 mode "normal"
+bindcode 128 mode "normal"
+bindcode 129 mode "normal"
+bindcode 130 mode "normal"
+bindcode 131 mode "normal"
+bindcode 132 mode "normal"
+bindcode 133 mode "normal"
+bindcode 134 mode "normal"
+bindcode 135 mode "normal"
+bindcode 136 mode "normal"
+bindcode 137 mode "normal"
+bindcode 138 mode "normal"
+bindcode 139 mode "normal"
+bindcode 140 mode "normal"
+bindcode 141 mode "normal"
+bindcode 142 mode "normal"
+bindcode 143 mode "normal"
+bindcode 144 mode "normal"
+bindcode 145 mode "normal"
+bindcode 146 mode "normal"
+bindcode 147 mode "normal"
+bindcode 148 mode "normal"
+bindcode 149 mode "normal"
+bindcode 150 mode "normal"
+bindcode 151 mode "normal"
+bindcode 152 mode "normal"
+bindcode 153 mode "normal"
+bindcode 154 mode "normal"
+bindcode 155 mode "normal"
+bindcode 156 mode "normal"
+bindcode 157 mode "normal"
+bindcode 158 mode "normal"
+bindcode 159 mode "normal"
+bindcode 160 mode "normal"
+bindcode 161 mode "normal"
+bindcode 162 mode "normal"
+bindcode 163 mode "normal"
+bindcode 164 mode "normal"
+bindcode 165 mode "normal"
+bindcode 166 mode "normal"
+bindcode 167 mode "normal"
+bindcode 168 mode "normal"
+bindcode 169 mode "normal"
+bindcode 170 mode "normal"
+bindcode 171 mode "normal"
+bindcode 172 mode "normal"
+bindcode 173 mode "normal"
+bindcode 174 mode "normal"
+bindcode 175 mode "normal"
+bindcode 176 mode "normal"
+bindcode 177 mode "normal"
+bindcode 178 mode "normal"
+bindcode 179 mode "normal"
+bindcode 180 mode "normal"
+bindcode 181 mode "normal"
+bindcode 182 mode "normal"
+bindcode 183 mode "normal"
+bindcode 184 mode "normal"
+bindcode 185 mode "normal"
+bindcode 186 mode "normal"
+bindcode 187 mode "normal"
+bindcode 188 mode "normal"
+bindcode 189 mode "normal"
+bindcode 190 mode "normal"
+bindcode 191 mode "normal"
+bindcode 192 mode "normal"
+bindcode 193 mode "normal"
+bindcode 194 mode "normal"
+bindcode 195 mode "normal"
+bindcode 196 mode "normal"
+bindcode 197 mode "normal"
+bindcode 198 mode "normal"
+bindcode 199 mode "normal"
+bindcode 200 mode "normal"
+bindcode 201 mode "normal"
+bindcode 202 mode "normal"
+bindcode 203 mode "normal"
+bindcode 204 mode "normal"
+bindcode 205 mode "normal"
+bindcode 206 mode "normal"
+bindcode 207 mode "normal"
+bindcode 208 mode "normal"
+bindcode 209 mode "normal"
+bindcode 210 mode "normal"
+bindcode 211 mode "normal"
+bindcode 212 mode "normal"
+bindcode 213 mode "normal"
+bindcode 214 mode "normal"
+bindcode 215 mode "normal"
+bindcode 216 mode "normal"
+bindcode 217 mode "normal"
+bindcode 218 mode "normal"
+bindcode 219 mode "normal"
+bindcode 220 mode "normal"
+bindcode 221 mode "normal"
+bindcode 222 mode "normal"
+bindcode 223 mode "normal"
+bindcode 224 mode "normal"
+bindcode 225 mode "normal"
+bindcode 226 mode "normal"
+bindcode 227 mode "normal"
+bindcode 228 mode "normal"
+bindcode 229 mode "normal"
+bindcode 230 mode "normal"
+bindcode 231 mode "normal"
+bindcode 232 mode "normal"
+bindcode 233 mode "normal"
+bindcode 234 mode "normal"
+bindcode 235 mode "normal"
+bindcode 236 mode "normal"
+bindcode 237 mode "normal"
+bindcode 238 mode "normal"
+bindcode 239 mode "normal"
+bindcode 240 mode "normal"
+bindcode 241 mode "normal"
+bindcode 242 mode "normal"
+bindcode 243 mode "normal"
+bindcode 244 mode "normal"
+bindcode 245 mode "normal"
+bindcode 246 mode "normal"
+bindcode 247 mode "normal"
+bindcode 248 mode "normal"
+bindcode 249 mode "normal"
+bindcode 250 mode "normal"
+bindcode 251 mode "normal"
+bindcode 252 mode "normal"
+bindcode 253 mode "normal"
+bindcode 254 mode "normal"
+bindcode 255 mode "normal"
+}
+
+mode "z" {
+bindsym z kill; mode "normal"
+bindsym Z kill; mode "normal"
+bindsym Return mode "normal"
+bindsym Escape mode "normal"
+bindsym $mod mode "normal"
+# for i in {8..255}; do echo -e "bindcode $i mode \"normal\""; done > 38return_nonkeybinds
+
+bindcode 8 mode "normal"
+# bindcode 9 mode "normal" Escape
+bindcode 10 mode "normal"
+bindcode 11 mode "normal"
+bindcode 12 mode "normal"
+bindcode 13 mode "normal"
+bindcode 14 mode "normal"
+bindcode 15 mode "normal"
+bindcode 16 mode "normal"
+bindcode 17 mode "normal"
+bindcode 18 mode "normal"
+bindcode 19 mode "normal"
+bindcode 20 mode "normal"
+bindcode 21 mode "normal"
+bindcode 22 mode "normal"
+bindcode 23 mode "normal"
+bindcode 24 mode "normal"
+bindcode 25 mode "normal"
+bindcode 26 mode "normal"
+bindcode 27 mode "normal"
+bindcode 28 mode "normal"
+bindcode 29 mode "normal"
+bindcode 30 mode "normal"
+bindcode 31 mode "normal"
+bindcode 32 mode "normal"
+bindcode 33 mode "normal"
+bindcode 34 mode "normal"
+bindcode 35 mode "normal"
+# bindcode 36 mode "normal" Return
+bindcode 37 mode "normal"
+bindcode 38 mode "normal"
+bindcode 39 mode "normal"
+bindcode 40 mode "normal"
+bindcode 41 mode "normal"
+bindcode 42 mode "normal"
+bindcode 43 mode "normal"
+bindcode 44 mode "normal"
+bindcode 45 mode "normal"
+bindcode 46 mode "normal"
+bindcode 47 mode "normal"
+bindcode 48 mode "normal"
+bindcode 49 mode "normal"
+bindcode 50 mode "normal"
+bindcode 51 mode "normal"
+# bindcode 52 mode "normal" # z Z
+bindcode 53 mode "normal"
+bindcode 54 mode "normal"
+bindcode 55 mode "normal"
+bindcode 56 mode "normal"
+bindcode 57 mode "normal"
+bindcode 58 mode "normal"
+bindcode 59 mode "normal"
+bindcode 60 mode "normal"
+bindcode 61 mode "normal"
+bindcode 62 mode "normal"
+bindcode 63 mode "normal"
+bindcode 64 mode "normal"
+bindcode 65 mode "normal"
+bindcode 66 mode "normal"
+bindcode 67 mode "normal"
+bindcode 68 mode "normal"
+bindcode 69 mode "normal"
+bindcode 70 mode "normal"
+bindcode 71 mode "normal"
+bindcode 72 mode "normal"
+bindcode 73 mode "normal"
+bindcode 74 mode "normal"
+bindcode 75 mode "normal"
+bindcode 76 mode "normal"
+bindcode 77 mode "normal"
+bindcode 78 mode "normal"
+bindcode 79 mode "normal"
+bindcode 80 mode "normal"
+bindcode 81 mode "normal"
+bindcode 82 mode "normal"
+bindcode 83 mode "normal"
+bindcode 84 mode "normal"
+bindcode 85 mode "normal"
+bindcode 86 mode "normal"
+bindcode 87 mode "normal"
+bindcode 88 mode "normal"
+bindcode 89 mode "normal"
+bindcode 90 mode "normal"
+bindcode 91 mode "normal"
+bindcode 92 mode "normal"
+bindcode 93 mode "normal"
+bindcode 94 mode "normal"
+bindcode 95 mode "normal"
+bindcode 96 mode "normal"
+bindcode 97 mode "normal"
+bindcode 98 mode "normal"
+bindcode 99 mode "normal"
+bindcode 100 mode "normal"
+bindcode 101 mode "normal"
+bindcode 102 mode "normal"
+bindcode 103 mode "normal"
+bindcode 104 mode "normal"
+bindcode 105 mode "normal"
+bindcode 106 mode "normal"
+bindcode 107 mode "normal"
+bindcode 108 mode "normal"
+bindcode 109 mode "normal"
+bindcode 110 mode "normal"
+bindcode 111 mode "normal"
+bindcode 112 mode "normal"
+bindcode 113 mode "normal"
+bindcode 114 mode "normal"
+bindcode 115 mode "normal"
+bindcode 116 mode "normal"
+bindcode 117 mode "normal"
+bindcode 118 mode "normal"
+bindcode 119 mode "normal"
+bindcode 120 mode "normal"
+bindcode 121 mode "normal"
+bindcode 122 mode "normal"
+bindcode 123 mode "normal"
+bindcode 124 mode "normal"
+bindcode 125 mode "normal"
+bindcode 126 mode "normal"
+bindcode 127 mode "normal"
+bindcode 128 mode "normal"
+bindcode 129 mode "normal"
+bindcode 130 mode "normal"
+bindcode 131 mode "normal"
+bindcode 132 mode "normal"
+bindcode 133 mode "normal"
+bindcode 134 mode "normal"
+bindcode 135 mode "normal"
+bindcode 136 mode "normal"
+bindcode 137 mode "normal"
+bindcode 138 mode "normal"
+bindcode 139 mode "normal"
+bindcode 140 mode "normal"
+bindcode 141 mode "normal"
+bindcode 142 mode "normal"
+bindcode 143 mode "normal"
+bindcode 144 mode "normal"
+bindcode 145 mode "normal"
+bindcode 146 mode "normal"
+bindcode 147 mode "normal"
+bindcode 148 mode "normal"
+bindcode 149 mode "normal"
+bindcode 150 mode "normal"
+bindcode 151 mode "normal"
+bindcode 152 mode "normal"
+bindcode 153 mode "normal"
+bindcode 154 mode "normal"
+bindcode 155 mode "normal"
+bindcode 156 mode "normal"
+bindcode 157 mode "normal"
+bindcode 158 mode "normal"
+bindcode 159 mode "normal"
+bindcode 160 mode "normal"
+bindcode 161 mode "normal"
+bindcode 162 mode "normal"
+bindcode 163 mode "normal"
+bindcode 164 mode "normal"
+bindcode 165 mode "normal"
+bindcode 166 mode "normal"
+bindcode 167 mode "normal"
+bindcode 168 mode "normal"
+bindcode 169 mode "normal"
+bindcode 170 mode "normal"
+bindcode 171 mode "normal"
+bindcode 172 mode "normal"
+bindcode 173 mode "normal"
+bindcode 174 mode "normal"
+bindcode 175 mode "normal"
+bindcode 176 mode "normal"
+bindcode 177 mode "normal"
+bindcode 178 mode "normal"
+bindcode 179 mode "normal"
+bindcode 180 mode "normal"
+bindcode 181 mode "normal"
+bindcode 182 mode "normal"
+bindcode 183 mode "normal"
+bindcode 184 mode "normal"
+bindcode 185 mode "normal"
+bindcode 186 mode "normal"
+bindcode 187 mode "normal"
+bindcode 188 mode "normal"
+bindcode 189 mode "normal"
+bindcode 190 mode "normal"
+bindcode 191 mode "normal"
+bindcode 192 mode "normal"
+bindcode 193 mode "normal"
+bindcode 194 mode "normal"
+bindcode 195 mode "normal"
+bindcode 196 mode "normal"
+bindcode 197 mode "normal"
+bindcode 198 mode "normal"
+bindcode 199 mode "normal"
+bindcode 200 mode "normal"
+bindcode 201 mode "normal"
+bindcode 202 mode "normal"
+bindcode 203 mode "normal"
+bindcode 204 mode "normal"
+bindcode 205 mode "normal"
+bindcode 206 mode "normal"
+bindcode 207 mode "normal"
+bindcode 208 mode "normal"
+bindcode 209 mode "normal"
+bindcode 210 mode "normal"
+bindcode 211 mode "normal"
+bindcode 212 mode "normal"
+bindcode 213 mode "normal"
+bindcode 214 mode "normal"
+bindcode 215 mode "normal"
+bindcode 216 mode "normal"
+bindcode 217 mode "normal"
+bindcode 218 mode "normal"
+bindcode 219 mode "normal"
+bindcode 220 mode "normal"
+bindcode 221 mode "normal"
+bindcode 222 mode "normal"
+bindcode 223 mode "normal"
+bindcode 224 mode "normal"
+bindcode 225 mode "normal"
+bindcode 226 mode "normal"
+bindcode 227 mode "normal"
+bindcode 228 mode "normal"
+bindcode 229 mode "normal"
+bindcode 230 mode "normal"
+bindcode 231 mode "normal"
+bindcode 232 mode "normal"
+bindcode 233 mode "normal"
+bindcode 234 mode "normal"
+bindcode 235 mode "normal"
+bindcode 236 mode "normal"
+bindcode 237 mode "normal"
+bindcode 238 mode "normal"
+bindcode 239 mode "normal"
+bindcode 240 mode "normal"
+bindcode 241 mode "normal"
+bindcode 242 mode "normal"
+bindcode 243 mode "normal"
+bindcode 244 mode "normal"
+bindcode 245 mode "normal"
+bindcode 246 mode "normal"
+bindcode 247 mode "normal"
+bindcode 248 mode "normal"
+bindcode 249 mode "normal"
+bindcode 250 mode "normal"
+bindcode 251 mode "normal"
+bindcode 252 mode "normal"
+bindcode 253 mode "normal"
+bindcode 254 mode "normal"
+bindcode 255 mode "normal"
+}
+
+set $Locker myi3lock && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+bindsym l exec --no-startup-id $Locker; mode "normal"
+bindsym e exec --no-startup-id i3-msg exit; mode "normal"
+bindsym s exec --no-startup-id $Locker && systemctl suspend; mode "normal"
+bindsym h exec --no-startup-id $Locker && systemctl hibernate; mode "normal"
+bindsym r exec --no-startup-id systemctl reboot; mode "normal"
+bindsym Shift+s exec --no-startup-id systemctl poweroff -i; mode "normal"
+# for i in {8..255}; do echo -e "bindcode $i mode \"normal\""; done > 38return_nonkeybinds
+
+bindcode 8 mode "normal"
+bindcode 9 mode "normal"
+bindcode 10 mode "normal"
+bindcode 11 mode "normal"
+bindcode 12 mode "normal"
+bindcode 13 mode "normal"
+bindcode 14 mode "normal"
+bindcode 15 mode "normal"
+bindcode 16 mode "normal"
+bindcode 17 mode "normal"
+bindcode 18 mode "normal"
+bindcode 19 mode "normal"
+bindcode 20 mode "normal"
+bindcode 21 mode "normal"
+bindcode 22 mode "normal"
+bindcode 23 mode "normal"
+bindcode 24 mode "normal"
+bindcode 25 mode "normal"
+# bindcode 26 mode "normal" # e
+# bindcode 27 mode "normal" # r
+bindcode 28 mode "normal"
+bindcode 29 mode "normal"
+bindcode 30 mode "normal"
+bindcode 31 mode "normal"
+bindcode 32 mode "normal"
+bindcode 33 mode "normal"
+bindcode 34 mode "normal"
+bindcode 35 mode "normal"
+bindcode 36 mode "normal"
+bindcode 37 mode "normal"
+bindcode 38 mode "normal"
+# bindcode 39 mode "normal" # s
+bindcode 40 mode "normal"
+bindcode 41 mode "normal"
+bindcode 42 mode "normal"
+# bindcode 43 mode "normal" # h
+bindcode 44 mode "normal"
+bindcode 45 mode "normal"
+# bindcode 46 mode "normal" # l
+bindcode 47 mode "normal"
+bindcode 48 mode "normal"
+bindcode 49 mode "normal"
+bindcode 50 mode "normal"
+bindcode 51 mode "normal"
+bindcode 52 mode "normal"
+bindcode 53 mode "normal"
+bindcode 54 mode "normal"
+bindcode 55 mode "normal"
+bindcode 56 mode "normal"
+bindcode 57 mode "normal"
+bindcode 58 mode "normal"
+bindcode 59 mode "normal"
+bindcode 60 mode "normal"
+bindcode 61 mode "normal"
+bindcode 62 mode "normal"
+bindcode 63 mode "normal"
+bindcode 64 mode "normal"
+bindcode 65 mode "normal"
+bindcode 66 mode "normal"
+bindcode 67 mode "normal"
+bindcode 68 mode "normal"
+bindcode 69 mode "normal"
+bindcode 70 mode "normal"
+bindcode 71 mode "normal"
+bindcode 72 mode "normal"
+bindcode 73 mode "normal"
+bindcode 74 mode "normal"
+bindcode 75 mode "normal"
+bindcode 76 mode "normal"
+bindcode 77 mode "normal"
+bindcode 78 mode "normal"
+bindcode 79 mode "normal"
+bindcode 80 mode "normal"
+bindcode 81 mode "normal"
+bindcode 82 mode "normal"
+bindcode 83 mode "normal"
+bindcode 84 mode "normal"
+bindcode 85 mode "normal"
+bindcode 86 mode "normal"
+bindcode 87 mode "normal"
+bindcode 88 mode "normal"
+bindcode 89 mode "normal"
+bindcode 90 mode "normal"
+bindcode 91 mode "normal"
+bindcode 92 mode "normal"
+bindcode 93 mode "normal"
+bindcode 94 mode "normal"
+bindcode 95 mode "normal"
+bindcode 96 mode "normal"
+bindcode 97 mode "normal"
+bindcode 98 mode "normal"
+bindcode 99 mode "normal"
+bindcode 100 mode "normal"
+bindcode 101 mode "normal"
+bindcode 102 mode "normal"
+bindcode 103 mode "normal"
+bindcode 104 mode "normal"
+bindcode 105 mode "normal"
+bindcode 106 mode "normal"
+bindcode 107 mode "normal"
+bindcode 108 mode "normal"
+bindcode 109 mode "normal"
+bindcode 110 mode "normal"
+bindcode 111 mode "normal"
+bindcode 112 mode "normal"
+bindcode 113 mode "normal"
+bindcode 114 mode "normal"
+bindcode 115 mode "normal"
+bindcode 116 mode "normal"
+bindcode 117 mode "normal"
+bindcode 118 mode "normal"
+bindcode 119 mode "normal"
+bindcode 120 mode "normal"
+bindcode 121 mode "normal"
+bindcode 122 mode "normal"
+bindcode 123 mode "normal"
+bindcode 124 mode "normal"
+bindcode 125 mode "normal"
+bindcode 126 mode "normal"
+bindcode 127 mode "normal"
+bindcode 128 mode "normal"
+bindcode 129 mode "normal"
+bindcode 130 mode "normal"
+bindcode 131 mode "normal"
+bindcode 132 mode "normal"
+bindcode 133 mode "normal"
+bindcode 134 mode "normal"
+bindcode 135 mode "normal"
+bindcode 136 mode "normal"
+bindcode 137 mode "normal"
+bindcode 138 mode "normal"
+bindcode 139 mode "normal"
+bindcode 140 mode "normal"
+bindcode 141 mode "normal"
+bindcode 142 mode "normal"
+bindcode 143 mode "normal"
+bindcode 144 mode "normal"
+bindcode 145 mode "normal"
+bindcode 146 mode "normal"
+bindcode 147 mode "normal"
+bindcode 148 mode "normal"
+bindcode 149 mode "normal"
+bindcode 150 mode "normal"
+bindcode 151 mode "normal"
+bindcode 152 mode "normal"
+bindcode 153 mode "normal"
+bindcode 154 mode "normal"
+bindcode 155 mode "normal"
+bindcode 156 mode "normal"
+bindcode 157 mode "normal"
+bindcode 158 mode "normal"
+bindcode 159 mode "normal"
+bindcode 160 mode "normal"
+bindcode 161 mode "normal"
+bindcode 162 mode "normal"
+bindcode 163 mode "normal"
+bindcode 164 mode "normal"
+bindcode 165 mode "normal"
+bindcode 166 mode "normal"
+bindcode 167 mode "normal"
+bindcode 168 mode "normal"
+bindcode 169 mode "normal"
+bindcode 170 mode "normal"
+bindcode 171 mode "normal"
+bindcode 172 mode "normal"
+bindcode 173 mode "normal"
+bindcode 174 mode "normal"
+bindcode 175 mode "normal"
+bindcode 176 mode "normal"
+bindcode 177 mode "normal"
+bindcode 178 mode "normal"
+bindcode 179 mode "normal"
+bindcode 180 mode "normal"
+bindcode 181 mode "normal"
+bindcode 182 mode "normal"
+bindcode 183 mode "normal"
+bindcode 184 mode "normal"
+bindcode 185 mode "normal"
+bindcode 186 mode "normal"
+bindcode 187 mode "normal"
+bindcode 188 mode "normal"
+bindcode 189 mode "normal"
+bindcode 190 mode "normal"
+bindcode 191 mode "normal"
+bindcode 192 mode "normal"
+bindcode 193 mode "normal"
+bindcode 194 mode "normal"
+bindcode 195 mode "normal"
+bindcode 196 mode "normal"
+bindcode 197 mode "normal"
+bindcode 198 mode "normal"
+bindcode 199 mode "normal"
+bindcode 200 mode "normal"
+bindcode 201 mode "normal"
+bindcode 202 mode "normal"
+bindcode 203 mode "normal"
+bindcode 204 mode "normal"
+bindcode 205 mode "normal"
+bindcode 206 mode "normal"
+bindcode 207 mode "normal"
+bindcode 208 mode "normal"
+bindcode 209 mode "normal"
+bindcode 210 mode "normal"
+bindcode 211 mode "normal"
+bindcode 212 mode "normal"
+bindcode 213 mode "normal"
+bindcode 214 mode "normal"
+bindcode 215 mode "normal"
+bindcode 216 mode "normal"
+bindcode 217 mode "normal"
+bindcode 218 mode "normal"
+bindcode 219 mode "normal"
+bindcode 220 mode "normal"
+bindcode 221 mode "normal"
+bindcode 222 mode "normal"
+bindcode 223 mode "normal"
+bindcode 224 mode "normal"
+bindcode 225 mode "normal"
+bindcode 226 mode "normal"
+bindcode 227 mode "normal"
+bindcode 228 mode "normal"
+bindcode 229 mode "normal"
+bindcode 230 mode "normal"
+bindcode 231 mode "normal"
+bindcode 232 mode "normal"
+bindcode 233 mode "normal"
+bindcode 234 mode "normal"
+bindcode 235 mode "normal"
+bindcode 236 mode "normal"
+bindcode 237 mode "normal"
+bindcode 238 mode "normal"
+bindcode 239 mode "normal"
+bindcode 240 mode "normal"
+bindcode 241 mode "normal"
+bindcode 242 mode "normal"
+bindcode 243 mode "normal"
+bindcode 244 mode "normal"
+bindcode 245 mode "normal"
+bindcode 246 mode "normal"
+bindcode 247 mode "normal"
+bindcode 248 mode "normal"
+bindcode 249 mode "normal"
+bindcode 250 mode "normal"
+bindcode 251 mode "normal"
+bindcode 252 mode "normal"
+bindcode 253 mode "normal"
+bindcode 254 mode "normal"
+bindcode 255 mode "normal"
+}
+
+mode "resize" {
+# These bindings trigger as soon as you enter the resize mode
+
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+bindsym h resize shrink width 10 px or 10 ppt
+bindsym j resize grow height 10 px or 10 ppt
+bindsym k resize shrink height 10 px or 10 ppt
+bindsym l resize grow width 10 px or 10 ppt
+
+# same bindings, but for the arrow keys
+bindsym Left resize shrink width 30 px or 30 ppt
+bindsym Down resize grow height 30 px or 30 ppt
+bindsym Up resize shrink height 30 px or 30 ppt
+bindsym Right resize grow width 30 px or 30 ppt
+
+# back to normal: Mod, Escape or directly to i
+# 133 = SuperL = mod4
+bindcode 133 mode "normal"
+bindsym Escape mode "normal"
+bindsym i mode "interactive"
+bindcode 8 nop
+# bindcode 9 nop # Escape
+bindcode 10 nop
+bindcode 11 nop
+bindcode 12 nop
+bindcode 13 nop
+bindcode 14 nop
+bindcode 15 nop
+bindcode 16 nop
+bindcode 17 nop
+bindcode 18 nop
+bindcode 19 nop
+bindcode 20 nop
+bindcode 21 nop
+bindcode 22 nop
+bindcode 23 nop
+bindcode 24 nop
+bindcode 25 nop
+bindcode 26 nop
+bindcode 27 nop
+bindcode 28 nop
+bindcode 29 nop
+bindcode 30 nop
+# bindcode 31 nop # i
+bindcode 32 nop
+bindcode 33 nop
+bindcode 34 nop
+bindcode 35 nop
+# bindcode 36 nop # Return
+bindcode 37 nop
+bindcode 38 nop
+bindcode 39 nop
+bindcode 40 nop
+bindcode 41 nop
+bindcode 42 nop
+# bindcode 43 nop # h
+# bindcode 44 nop # j
+# bindcode 45 nop # k
+# bindcode 46 nop # l
+bindcode 47 nop
+bindcode 48 nop
+bindcode 49 nop
+bindcode 50 nop
+bindcode 51 nop
+bindcode 52 nop
+bindcode 53 nop
+bindcode 54 nop
+bindcode 55 nop
+bindcode 56 nop
+bindcode 57 nop
+bindcode 58 nop
+bindcode 59 nop
+bindcode 60 nop
+bindcode 61 nop
+bindcode 62 nop
+bindcode 63 nop
+bindcode 64 nop
+bindcode 65 nop
+bindcode 66 nop
+bindcode 67 nop
+bindcode 68 nop
+bindcode 69 nop
+bindcode 70 nop
+bindcode 71 nop
+bindcode 72 nop
+bindcode 73 nop
+bindcode 74 nop
+bindcode 75 nop
+bindcode 76 nop
+bindcode 77 nop
+bindcode 78 nop
+bindcode 79 nop
+bindcode 80 nop
+bindcode 81 nop
+bindcode 82 nop
+bindcode 83 nop
+bindcode 84 nop
+bindcode 85 nop
+bindcode 86 nop
+bindcode 87 nop
+bindcode 88 nop
+bindcode 89 nop
+bindcode 90 nop
+bindcode 91 nop
+bindcode 92 nop
+bindcode 93 nop
+bindcode 94 nop
+bindcode 95 nop
+bindcode 96 nop
+bindcode 97 nop
+bindcode 98 nop
+bindcode 99 nop
+bindcode 100 nop
+bindcode 101 nop
+bindcode 102 nop
+bindcode 103 nop
+bindcode 104 nop
+bindcode 105 nop
+bindcode 106 nop
+bindcode 107 nop
+bindcode 108 nop
+bindcode 109 nop
+bindcode 110 nop
+# bindcode 111 nop # Up
+bindcode 112 nop
+# bindcode 113 nop # Left
+# bindcode 114 nop # Right
+bindcode 115 nop
+# bindcode 116 nop # Down
+bindcode 117 nop
+bindcode 118 nop
+bindcode 119 nop
+bindcode 120 nop
+bindcode 121 nop
+bindcode 122 nop
+bindcode 123 nop
+bindcode 124 nop
+bindcode 125 nop
+bindcode 126 nop
+bindcode 127 nop
+bindcode 128 nop
+bindcode 129 nop
+bindcode 130 nop
+bindcode 131 nop
+bindcode 132 nop
+# bindcode 133 nop # super/mod
+bindcode 134 nop
+bindcode 135 nop
+bindcode 136 nop
+bindcode 137 nop
+bindcode 138 nop
+bindcode 139 nop
+bindcode 140 nop
+bindcode 141 nop
+bindcode 142 nop
+bindcode 143 nop
+bindcode 144 nop
+bindcode 145 nop
+bindcode 146 nop
+bindcode 147 nop
+bindcode 148 nop
+bindcode 149 nop
+bindcode 150 nop
+bindcode 151 nop
+bindcode 152 nop
+bindcode 153 nop
+bindcode 154 nop
+bindcode 155 nop
+bindcode 156 nop
+bindcode 157 nop
+bindcode 158 nop
+bindcode 159 nop
+bindcode 160 nop
+bindcode 161 nop
+bindcode 162 nop
+bindcode 163 nop
+bindcode 164 nop
+bindcode 165 nop
+bindcode 166 nop
+bindcode 167 nop
+bindcode 168 nop
+bindcode 169 nop
+bindcode 170 nop
+bindcode 171 nop
+bindcode 172 nop
+bindcode 173 nop
+bindcode 174 nop
+bindcode 175 nop
+bindcode 176 nop
+bindcode 177 nop
+bindcode 178 nop
+bindcode 179 nop
+bindcode 180 nop
+bindcode 181 nop
+bindcode 182 nop
+bindcode 183 nop
+bindcode 184 nop
+bindcode 185 nop
+bindcode 186 nop
+bindcode 187 nop
+bindcode 188 nop
+bindcode 189 nop
+bindcode 190 nop
+bindcode 191 nop
+bindcode 192 nop
+bindcode 193 nop
+bindcode 194 nop
+bindcode 195 nop
+bindcode 196 nop
+bindcode 197 nop
+bindcode 198 nop
+bindcode 199 nop
+bindcode 200 nop
+bindcode 201 nop
+bindcode 202 nop
+bindcode 203 nop
+bindcode 204 nop
+bindcode 205 nop
+bindcode 206 nop
+bindcode 207 nop
+bindcode 208 nop
+bindcode 209 nop
+bindcode 210 nop
+bindcode 211 nop
+bindcode 212 nop
+bindcode 213 nop
+bindcode 214 nop
+bindcode 215 nop
+bindcode 216 nop
+bindcode 217 nop
+bindcode 218 nop
+bindcode 219 nop
+bindcode 220 nop
+bindcode 221 nop
+bindcode 222 nop
+bindcode 223 nop
+bindcode 224 nop
+bindcode 225 nop
+bindcode 226 nop
+bindcode 227 nop
+bindcode 228 nop
+bindcode 229 nop
+bindcode 230 nop
+bindcode 231 nop
+bindcode 232 nop
+bindcode 233 nop
+bindcode 234 nop
+bindcode 235 nop
+bindcode 236 nop
+bindcode 237 nop
+bindcode 238 nop
+bindcode 239 nop
+bindcode 240 nop
+bindcode 241 nop
+bindcode 242 nop
+bindcode 243 nop
+bindcode 244 nop
+bindcode 245 nop
+bindcode 246 nop
+bindcode 247 nop
+bindcode 248 nop
+bindcode 249 nop
+bindcode 250 nop
+bindcode 251 nop
+bindcode 252 nop
+bindcode 255 nop
+bindcode 253 nop
+bindcode 254 nop
+}
+
+mode "interactive" {
+#bindsym $mod+Return mode "normal"
+#bindsym $mod+Escape mode "normal"
+# 133 = SuperL = mod4
+bindcode 133 mode "normal"
+# Use fn volumekeys
+bindsym XF86AudioMute exec amixer -D pulse set 'Master' 1+ toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# Use fn brightness control
+bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness
+#bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness
+bindsym XF86MonBrightnessDown exec light -S $(echo "$(light -G) / 2" | bc -l) # decrease lightness by halve
+# vimlike marks #TODO
+#bindsym m i3-input -F 'mark --toggle %s' -l 1 -P 'Mark: '
+#bindsym M i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+
+# change focus
+bindsym $mod+h focus left, mode "normal"
+bindsym $mod+j focus down, mode "normal"
+bindsym $mod+k focus up, mode "normal"
+bindsym $mod+l focus right, mode "normal"
+
+# move focused window
+bindsym $mod+Shift+h move left, mode "normal"
+bindsym $mod+Shift+j move down, mode "normal"
+bindsym $mod+Shift+k move up, mode "normal"
+bindsym $mod+Shift+l move right, mode "normal"
+
+# switch workspace (gridbased)
+bindsym $mod+b workspace   prev, mode "normal"
+#bindsym $mod+n workspace  next, mode "normal"
+#bindsym $mod+m workspace  prev, mode "normal"
+bindsym $mod+comma workspace   next, mode "normal"
+bindsym $mod+Tab workspace back_and_forth, mode "normal"
+
+# move focused window to workspace (gridbased)
+bindsym $mod+Shift+b   move container to workspace prev, mode "normal"
+#bindsym $mod+Shift+n  move container to workspace next, mode "normal"
+#bindsym $mod+Shift+m  move container to workspace prev, mode "normal"
+bindsym $mod+Shift+comma   move container to workspace next, mode "normal"
+bindsym $mod+Shift+Tab move container to workspace back_and_forth, mode "normal"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1, mode "normal"
+bindsym $mod+2 workspace $ws2, mode "normal"
+bindsym $mod+3 workspace $ws3, mode "normal"
+bindsym $mod+4 workspace $ws4, mode "normal"
+bindsym $mod+5 workspace $ws5, mode "normal"
+bindsym $mod+6 workspace $ws6, mode "normal"
+bindsym $mod+7 workspace $ws7, mode "normal"
+bindsym $mod+8 workspace $ws8, mode "normal"
+bindsym $mod+9 workspace $ws9, mode "normal"
+bindsym $mod+0 workspace $ws10, mode "normal"
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1, mode "normal"
+bindsym $mod+Shift+2 move container to workspace $ws2, mode "normal"
+bindsym $mod+Shift+3 move container to workspace $ws3, mode "normal"
+bindsym $mod+Shift+4 move container to workspace $ws4, mode "normal"
+bindsym $mod+Shift+5 move container to workspace $ws5, mode "normal"
+bindsym $mod+Shift+6 move container to workspace $ws6, mode "normal"
+bindsym $mod+Shift+7 move container to workspace $ws7, mode "normal"
+bindsym $mod+Shift+8 move container to workspace $ws8, mode "normal"
+bindsym $mod+Shift+9 move container to workspace $ws9, mode "normal"
+bindsym $mod+Shift+0 move container to workspace $ws10, mode "normal"
+}
+
+mode "normal" {
+##Internal stuff
+# remake and reload the configuration file
+bindsym $mod+Shift+c exec --no-startup-id cat ~/.config/i3/config.d/* > ~/.config/i3/config; exec --no-startup-id i3-migrate-config-to-v4 ~/.config/i3/config ~/.config/i3/config; exec --no-startup-id reseti3; reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# bindsym $mod+Shift+r restart, exec --no-startup-id xdotool key --clearmodifiers n
+# bindsym $mod+Shift+r restart; mode $mod+Shift+n
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+n mode "normal"
+
+# floating quick use xprop
+bindsym Print exec $term --class floatingterm -x "pipe 'xprop -len 60 -spy' 'less'"
+
+## i3 related content
+# start a terminal
+bindsym o exec $term; mode "interactive"
+
+# move the (Tilda-like but terminator) scratchpad terminal to or from the scratchpad
+bindsym grave scratchpad show; mode "interactive"
+
+# start dmenu (a program launcher)
+bindsym d exec dmenu_run
+
+#TODO # yank current selection maybe to scratchpad? or maybe as a textcopy
+# bindsym y
+
+# execute a bash command
+set $bcmd "exec $term --class floatingterm -xh '%s'"
+bindsym Shift+semicolon exec --no-startup-id i3-input -F $bcmd -P ":"
+#bindsym Shift+semicolon mode "interactive", exec --no-startup-id i3-input -F $bcmd -P ":"
+
+# search and represent
+set $gcmd "exec $term --class floatingterm -x \\\"pipe 'grep' '%s'\\\""
+bindsym slash mode exec --no-startup-id i3-input -F $gcmd -P "/"
+#bindsym slash mode "interactive", exec --no-startup-id i3-input -F $gcmd -P "/"
+# Use fn volumekeys
+bindsym XF86AudioMute exec amixer -D pulse set 'Master' 1+ toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# Use fn brightness control
+bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness
+#bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness
+bindsym XF86MonBrightnessDown exec light -S $(echo "$(light -G) / 2" | bc -l) # decrease lightness by halve
+# define mode keys
+bindsym i mode "interactive"
+bindsym v mode "visual"
+bindsym r mode "resize"
+
+bindsym z mode "z"
+bindsym Z mode "z"
+
+bindsym q mode "$mode_system"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# vimlike marks #TODO
+#bindsym m i3-input -F 'mark --toggle %s' -l 1 -P 'Mark: '
+#bindsym M i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+
+# change focus
+bindsym h focus left
+bindsym j focus down
+bindsym k focus up
+bindsym l focus right
+
+# move focused window
+bindsym Shift+h move left
+bindsym Shift+j move down
+bindsym Shift+k move up
+bindsym Shift+l move right
+
+# switch workspace (gridbased)
+bindsym b workspace   prev
+#bindsym n workspace  next
+#bindsym m workspace  prev
+bindsym comma workspace   next
+bindsym Tab workspace back_and_forth
+
+# move focused window to workspace (gridbased)
+bindsym Shift+b   move container to workspace prev
+#bindsym Shift+n  move container to workspace next
+#bindsym Shift+m  move container to workspace prev
+bindsym Shift+comma   move container to workspace next
+bindsym Shift+Tab move container to workspace back_and_forth
+
+# switch to workspace
+bindsym 1 workspace $ws1
+bindsym 2 workspace $ws2
+bindsym 3 workspace $ws3
+bindsym 4 workspace $ws4
+bindsym 5 workspace $ws5
+bindsym 6 workspace $ws6
+bindsym 7 workspace $ws7
+bindsym 8 workspace $ws8
+bindsym 9 workspace $ws9
+bindsym 0 workspace $ws10
+
+# move focused container to workspace
+bindsym Shift+1 move container to workspace $ws1
+bindsym Shift+2 move container to workspace $ws2
+bindsym Shift+3 move container to workspace $ws3
+bindsym Shift+4 move container to workspace $ws4
+bindsym Shift+5 move container to workspace $ws5
+bindsym Shift+6 move container to workspace $ws6
+bindsym Shift+7 move container to workspace $ws7
+bindsym Shift+8 move container to workspace $ws8
+bindsym Shift+9 move container to workspace $ws9
+bindsym Shift+0 move container to workspace $ws10
+# vimlike marks #TODO
+#bindsym m i3-input -F 'mark --toggle %s' -l 1 -P 'Mark: '
+#bindsym M i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+
+# change focus
+bindsym $mod+h focus left, mode "normal"
+bindsym $mod+j focus down, mode "normal"
+bindsym $mod+k focus up, mode "normal"
+bindsym $mod+l focus right, mode "normal"
+
+# move focused window
+bindsym $mod+Shift+h move left, mode "normal"
+bindsym $mod+Shift+j move down, mode "normal"
+bindsym $mod+Shift+k move up, mode "normal"
+bindsym $mod+Shift+l move right, mode "normal"
+
+# switch workspace (gridbased)
+bindsym $mod+b workspace   prev, mode "normal"
+#bindsym $mod+n workspace  next, mode "normal"
+#bindsym $mod+m workspace  prev, mode "normal"
+bindsym $mod+comma workspace   next, mode "normal"
+bindsym $mod+Tab workspace back_and_forth, mode "normal"
+
+# move focused window to workspace (gridbased)
+bindsym $mod+Shift+b   move container to workspace prev, mode "normal"
+#bindsym $mod+Shift+n  move container to workspace next, mode "normal"
+#bindsym $mod+Shift+m  move container to workspace prev, mode "normal"
+bindsym $mod+Shift+comma   move container to workspace next, mode "normal"
+bindsym $mod+Shift+Tab move container to workspace back_and_forth, mode "normal"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1, mode "normal"
+bindsym $mod+2 workspace $ws2, mode "normal"
+bindsym $mod+3 workspace $ws3, mode "normal"
+bindsym $mod+4 workspace $ws4, mode "normal"
+bindsym $mod+5 workspace $ws5, mode "normal"
+bindsym $mod+6 workspace $ws6, mode "normal"
+bindsym $mod+7 workspace $ws7, mode "normal"
+bindsym $mod+8 workspace $ws8, mode "normal"
+bindsym $mod+9 workspace $ws9, mode "normal"
+bindsym $mod+0 workspace $ws10, mode "normal"
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1, mode "normal"
+bindsym $mod+Shift+2 move container to workspace $ws2, mode "normal"
+bindsym $mod+Shift+3 move container to workspace $ws3, mode "normal"
+bindsym $mod+Shift+4 move container to workspace $ws4, mode "normal"
+bindsym $mod+Shift+5 move container to workspace $ws5, mode "normal"
+bindsym $mod+Shift+6 move container to workspace $ws6, mode "normal"
+bindsym $mod+Shift+7 move container to workspace $ws7, mode "normal"
+bindsym $mod+Shift+8 move container to workspace $ws8, mode "normal"
+bindsym $mod+Shift+9 move container to workspace $ws9, mode "normal"
+bindsym $mod+Shift+0 move container to workspace $ws10, mode "normal"
+# split in horizontal orientation
+#bindsym | split h
+bindsym Shift+backslash split h
+
+# split in vertical orientation
+bindsym Shift+minus split v
+#bindsym _ split v
+
+# container layout
+bindsym f fullscreen toggle
+bindsym t layout tabbed
+bindsym w layout toggle split
+
+# focus the parent container
+bindsym a focus parent
+
+# focus the child container
+bindsym x focus child
+
+# These two can keep the $mod, since I won't be using them often
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position NOT currently in use
+# floating_modifier button1
+# for i in {8..255}; do echo -e "bindcode $i mode \"normal\""; done > 38return_nonkeybinds
+
+bindcode 8 nop
+bindcode 9 nop
+# bindcode 10 nop
+# bindcode 11 nop
+# bindcode 12 nop
+# bindcode 13 nop
+# bindcode 14 nop
+# bindcode 15 nop
+# bindcode 16 nop
+# bindcode 17 nop
+# bindcode 18 nop
+# bindcode 19 nop
+bindcode 20 nop
+bindcode 21 nop
+bindcode 22 nop
+# bindcode 23 nop # tab?
+# bindcode 24 nop # q
+# bindcode 25 nop # w
+bindcode 26 nop
+# bindcode 27 nop # r
+# bindcode 28 nop # t
+bindcode 29 nop
+bindcode 30 nop
+# bindcode 31 nop # i
+# bindcode 32 nop # o
+bindcode 33 nop
+bindcode 34 nop
+bindcode 35 nop
+bindcode 36 nop
+bindcode 37 nop
+# bindcode 38 nop # a
+bindcode 39 nop
+# bindcode 40 nop
+# bindcode 41 nop
+bindcode 42 nop
+# bindcode 43 nop
+# bindcode 44 nop
+# bindcode 45 nop
+# bindcode 46 nop
+bindcode 47 nop
+bindcode 48 nop
+# bindcode 49 nop # grave? / `
+bindcode 50 nop
+bindcode 51 nop
+# bindcode 52 nop
+# bindcode 53 nop # x
+bindcode 54 nop
+# bindcode 55 nop
+# bindcode 56 nop # b
+bindcode 57 nop
+bindcode 58 nop
+# bindcode 59 nop # comma
+bindcode 60 nop
+# bindcode 61 nop # slash
+bindcode 62 nop
+bindcode 63 nop
+bindcode 64 nop
+bindcode 65 nop
+bindcode 66 nop
+bindcode 67 nop
+bindcode 68 nop
+bindcode 69 nop
+bindcode 70 nop
+bindcode 71 nop
+bindcode 72 nop
+bindcode 73 nop
+bindcode 74 nop
+bindcode 75 nop
+bindcode 76 nop
+bindcode 77 nop
+bindcode 78 nop
+bindcode 79 nop
+bindcode 80 nop
+bindcode 81 nop
+bindcode 82 nop
+bindcode 83 nop
+bindcode 84 nop
+bindcode 85 nop
+bindcode 86 nop
+bindcode 87 nop
+bindcode 88 nop
+bindcode 89 nop
+bindcode 90 nop
+bindcode 91 nop
+bindcode 92 nop
+bindcode 93 nop
+# bindcode 94 nop # grave?
+bindcode 95 nop
+bindcode 96 nop
+bindcode 97 nop
+bindcode 98 nop
+bindcode 99 nop
+bindcode 100 nop
+bindcode 101 nop
+bindcode 102 nop
+bindcode 103 nop
+bindcode 104 nop
+bindcode 105 nop
+bindcode 106 nop
+# bindcode 107 nop
+bindcode 108 nop
+bindcode 109 nop
+bindcode 110 nop
+bindcode 111 nop
+bindcode 112 nop
+bindcode 113 nop
+bindcode 114 nop
+bindcode 115 nop
+bindcode 116 nop
+bindcode 117 nop
+bindcode 118 nop
+bindcode 119 nop
+bindcode 120 nop
+# bindcode 121 nop
+# bindcode 122 nop
+# bindcode 123 nop
+bindcode 124 nop
+bindcode 125 nop
+bindcode 126 nop
+bindcode 127 nop
+bindcode 128 nop
+bindcode 129 nop
+bindcode 130 nop
+bindcode 131 nop
+bindcode 132 nop
+bindcode 133 nop
+bindcode 134 nop
+bindcode 135 nop
+bindcode 136 nop
+bindcode 137 nop
+bindcode 138 nop
+bindcode 139 nop
+bindcode 140 nop
+bindcode 141 nop
+bindcode 142 nop
+bindcode 143 nop
+bindcode 144 nop
+bindcode 145 nop
+bindcode 146 nop
+bindcode 147 nop
+bindcode 148 nop
+bindcode 149 nop
+bindcode 150 nop
+bindcode 151 nop
+bindcode 152 nop
+bindcode 153 nop
+bindcode 154 nop
+bindcode 155 nop
+bindcode 156 nop
+bindcode 157 nop
+bindcode 158 nop
+bindcode 159 nop
+bindcode 160 nop
+bindcode 161 nop
+bindcode 162 nop
+bindcode 163 nop
+bindcode 164 nop
+bindcode 165 nop
+bindcode 166 nop
+bindcode 167 nop
+bindcode 168 nop
+bindcode 169 nop
+bindcode 170 nop
+bindcode 171 nop
+bindcode 172 nop
+bindcode 173 nop
+bindcode 174 nop
+bindcode 175 nop
+bindcode 176 nop
+bindcode 177 nop
+bindcode 178 nop
+bindcode 179 nop
+bindcode 180 nop
+bindcode 181 nop
+bindcode 182 nop
+bindcode 183 nop
+bindcode 184 nop
+bindcode 185 nop
+bindcode 186 nop
+bindcode 187 nop
+bindcode 188 nop
+bindcode 189 nop
+bindcode 190 nop
+bindcode 191 nop
+bindcode 192 nop
+bindcode 193 nop
+bindcode 194 nop
+bindcode 195 nop
+bindcode 196 nop
+bindcode 197 nop
+bindcode 198 nop
+bindcode 199 nop
+bindcode 200 nop
+bindcode 201 nop
+bindcode 202 nop
+bindcode 203 nop
+bindcode 204 nop
+bindcode 205 nop
+# bindcode 206 nop
+bindcode 207 nop
+bindcode 208 nop
+bindcode 209 nop
+bindcode 210 nop
+bindcode 211 nop
+bindcode 212 nop
+bindcode 213 nop
+bindcode 214 nop
+bindcode 215 nop
+bindcode 216 nop
+bindcode 217 nop
+# bindcode 218 nop
+bindcode 219 nop
+bindcode 220 nop
+bindcode 221 nop
+bindcode 222 nop
+bindcode 223 nop
+bindcode 224 nop
+bindcode 225 nop
+bindcode 226 nop
+bindcode 227 nop
+bindcode 228 nop
+bindcode 229 nop
+bindcode 230 nop
+bindcode 231 nop
+# bindcode 232 nop
+# bindcode 233 nop
+bindcode 234 nop
+bindcode 235 nop
+bindcode 236 nop
+bindcode 237 nop
+bindcode 238 nop
+bindcode 239 nop
+bindcode 240 nop
+bindcode 241 nop
+bindcode 242 nop
+bindcode 243 nop
+bindcode 244 nop
+bindcode 245 nop
+bindcode 246 nop
+bindcode 247 nop
+bindcode 248 nop
+bindcode 249 nop
+bindcode 250 nop
+bindcode 251 nop
+bindcode 252 nop
+bindcode 253 nop
+bindcode 254 nop
+bindcode 255 nop
+}
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    workspace_buttons yes
+    strip_workspace_numbers no
+    status_command i3status
+
+    # disable scrolling on i3bar
+    bindsym button4 nop
+    # = wheel_up_cmd nop
+    bindsym button5 nop
+    # = wheel_down_cmd nop
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+
+        focused_workspace #4c7899 #285577 #ffffff
+        active_workspace #333333 #5f67a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+        binding_mode #2f343a #900000 #ffffff
+    }
+}

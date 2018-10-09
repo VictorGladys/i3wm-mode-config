@@ -1,0 +1,6 @@
+bindsym l exec --no-startup-id $Locker; mode "normal"
+bindsym e exec --no-startup-id i3-msg exit; mode "normal"
+bindsym s exec --no-startup-id $Locker && systemctl suspend; mode "normal"
+bindsym h exec --no-startup-id $Locker && systemctl hibernate; mode "normal"
+bindsym r exec --no-startup-id systemctl reboot; mode "normal"
+bindsym Shift+s exec --no-startup-id systemctl poweroff -i; mode "normal"

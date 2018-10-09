@@ -1,0 +1,9 @@
+# Use fn volumekeys
+bindsym XF86AudioMute exec amixer -D pulse set 'Master' 1+ toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# Use fn brightness control
+bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness
+#bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness
+bindsym XF86MonBrightnessDown exec light -S $(echo "$(light -G) / 2" | bc -l) # decrease lightness by halve

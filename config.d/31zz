@@ -1,0 +1,5 @@
+bindsym z kill; mode "normal"
+bindsym Z kill; mode "normal"
+bindsym Return mode "normal"
+bindsym Escape mode "normal"
+bindsym $mod mode "normal"

@@ -1,0 +1,53 @@
+# vimlike marks #TODO
+#bindsym m i3-input -F 'mark --toggle %s' -l 1 -P 'Mark: '
+#bindsym M i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+
+# change focus
+bindsym $mod+h focus left, mode "normal"
+bindsym $mod+j focus down, mode "normal"
+bindsym $mod+k focus up, mode "normal"
+bindsym $mod+l focus right, mode "normal"
+
+# move focused window
+bindsym $mod+Shift+h move left, mode "normal"
+bindsym $mod+Shift+j move down, mode "normal"
+bindsym $mod+Shift+k move up, mode "normal"
+bindsym $mod+Shift+l move right, mode "normal"
+
+# switch workspace (gridbased)
+bindsym $mod+b workspace   prev, mode "normal"
+#bindsym $mod+n workspace  next, mode "normal"
+#bindsym $mod+m workspace  prev, mode "normal"
+bindsym $mod+comma workspace   next, mode "normal"
+bindsym $mod+Tab workspace back_and_forth, mode "normal"
+
+# move focused window to workspace (gridbased)
+bindsym $mod+Shift+b   move container to workspace prev, mode "normal"
+#bindsym $mod+Shift+n  move container to workspace next, mode "normal"
+#bindsym $mod+Shift+m  move container to workspace prev, mode "normal"
+bindsym $mod+Shift+comma   move container to workspace next, mode "normal"
+bindsym $mod+Shift+Tab move container to workspace back_and_forth, mode "normal"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1, mode "normal"
+bindsym $mod+2 workspace $ws2, mode "normal"
+bindsym $mod+3 workspace $ws3, mode "normal"
+bindsym $mod+4 workspace $ws4, mode "normal"
+bindsym $mod+5 workspace $ws5, mode "normal"
+bindsym $mod+6 workspace $ws6, mode "normal"
+bindsym $mod+7 workspace $ws7, mode "normal"
+bindsym $mod+8 workspace $ws8, mode "normal"
+bindsym $mod+9 workspace $ws9, mode "normal"
+bindsym $mod+0 workspace $ws10, mode "normal"
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1, mode "normal"
+bindsym $mod+Shift+2 move container to workspace $ws2, mode "normal"
+bindsym $mod+Shift+3 move container to workspace $ws3, mode "normal"
+bindsym $mod+Shift+4 move container to workspace $ws4, mode "normal"
+bindsym $mod+Shift+5 move container to workspace $ws5, mode "normal"
+bindsym $mod+Shift+6 move container to workspace $ws6, mode "normal"
+bindsym $mod+Shift+7 move container to workspace $ws7, mode "normal"
+bindsym $mod+Shift+8 move container to workspace $ws8, mode "normal"
+bindsym $mod+Shift+9 move container to workspace $ws9, mode "normal"
+bindsym $mod+Shift+0 move container to workspace $ws10, mode "normal"

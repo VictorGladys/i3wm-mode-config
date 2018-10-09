@@ -1,0 +1,3 @@
+# at startup immediately enter normal mode and never leave it. this way keypresses while in normal mode don't filter down to interactive
+
+# mode "default" {

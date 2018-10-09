@@ -1,0 +1,4 @@
+#bindsym $mod+Return mode "normal"
+#bindsym $mod+Escape mode "normal"
+# 133 = SuperL = mod4
+bindcode 133 mode "normal"
