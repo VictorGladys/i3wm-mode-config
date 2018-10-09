@@ -1,1 +1,0 @@
-/home/victor/.config/i3/i3-js/js-1.8.5/js/src/jsautokw.h

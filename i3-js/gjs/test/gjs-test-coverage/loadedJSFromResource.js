@@ -1,1 +1,0 @@
-function mock_function() {}
