@@ -1,0 +1,47 @@
+# These bindings trigger as soon as you enter the resize mode
+
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+
+# s for Sinister (left)
+bindsym s exec xdotool click 1
+bindsym Shift+s exec xdotool click 1
+bindsym Shift+s exec xdotool click 1
+# d for Dexter (right)
+bindsym d exec xdotool click 3
+bindsym Shift+d exec xdotool mousedown 1
+
+bindsym u exec xdotool mousemove_relative -- -5 0
+bindsym i exec xdotool mousemove_relative -- 0 5
+bindsym o exec xdotool mousemove_relative -- 0 -5
+bindsym p exec xdotool mousemove_relative -- 5 0
+
+bindsym h exec xdotool mousemove_relative -- -100 0
+bindsym j exec xdotool mousemove_relative -- 0 100
+bindsym k exec xdotool mousemove_relative -- 0 -100
+bindsym l exec xdotool mousemove_relative -- 100 0
+
+bindsym b exec xdotool mousemove_relative -- -300 0
+bindsym n exec xdotool mousemove_relative -- 0 300
+bindsym m exec xdotool mousemove_relative -- 0 -300
+bindsym comma exec xdotool mousemove_relative -- 300 0
+
+bindsym Shift+u exec xdotool mousemove_relative -- -5 5
+bindsym Shift+i exec xdotool mousemove_relative -- 5 5
+bindsym Shift+o exec xdotool mousemove_relative -- -5 -5
+bindsym Shift+p exec xdotool mousemove_relative -- 5 -5
+
+bindsym Shift+h exec xdotool mousemove_relative -- -100 100
+bindsym Shift+j exec xdotool mousemove_relative -- 100 100
+bindsym Shift+k exec xdotool mousemove_relative -- -100 -100
+bindsym Shift+l exec xdotool mousemove_relative -- 100 -100
+
+bindsym Shift+b exec xdotool mousemove_relative -- -300 300
+bindsym Shift+n exec xdotool mousemove_relative -- 300 300
+bindsym Shift+m exec xdotool mousemove_relative -- -300 -300
+bindsym Shift+comma exec xdotool mousemove_relative -- 300 -300
+
+# directly to to interactive: i
+bindsym r mode "resize"

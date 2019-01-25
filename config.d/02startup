@@ -3,19 +3,21 @@ exec --no-startup-id nm-applet
 exec /home/victor/bin/myxautolock
 #exec /home/victor/bin/myxautolocksuspend
 #exec --no-startup-id blueman-applet
-exec --no-startup-id telegram-desktop
+#exec --no-startup-id telegram-desktop
 #exec --no-startup-id screenkey
-exec screenkey -p fixed -s small --mods-mode emacs --bak-mode baked --key-mode translated --persist -t 300 -p fixed -g 200x40+2360+1370
+#exec screenkey -p fixed -s small --mods-mode emacs --bak-mode baked --key-mode translated --persist -t 300 -p fixed -g 200x40+2360+1370
 
 # -R so no restoring old windows in this session basedir so qt browsers don't share same commands and title, title so they are sorted correctly
-exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-gmail/    --target window --qt-arg title qt-gmail www.gmail.com
+exec --no-startup-id google-chrome --app=http://www.gmail.com
+exec --no-startup-id google-chrome --app=http://calendar.google.com
+#exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-gmail/    --target window --qt-arg title qt-gmail www.gmail.com
 #exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-slack/    --target window --qt-arg title qt-slack asacbestuur.slack.com
 #exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-drive/    --target window --qt-arg title qt-drive drive.google.com
 #exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-bb/       --target window --qt-arg title qt-blackboard blackboard.ic.uva.nl/webapps/login/
-exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-calendar/ --target window --qt-arg title qt-calendar calendar.google.com
+#exec --no-startup-id qutebrowser -R --basedir ~/Downloads/qt/qt-calendar/ --target window --qt-arg title qt-calendar calendar.google.com
 
-# compton allows for transparency in i3
-exec --no-startup-id compton
+# compton allows for transparency in i3 UPDATE: may be the cause for freezes
+# exec --no-startup-id compton
 
 # our tilda-like terminal
 exec terminator -c dropdown -p dropdown

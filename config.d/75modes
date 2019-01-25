@@ -2,6 +2,7 @@
 bindsym i mode "interactive"
 bindsym v mode "visual"
 bindsym r mode "resize"
+bindsym m mode "mouse"
 
 bindsym z mode "z"
 bindsym Z mode "z"

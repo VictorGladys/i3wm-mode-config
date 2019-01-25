@@ -40,11 +40,15 @@ set $ws10 "10: steam"
 assign [class="Telegram|telegram"] $ws1
 assign [title="qt-skype"] $ws1
 
-assign [title="qt-gmail"] $ws2
 assign [title="qt-slack"] $ws2
 assign [title="qt-drive"] $ws2
+assign [title="qt-gmail"] $ws2
+assign [class="www.gmail.com"] $ws2
+assign [instance="www.gmail.com"] $ws2
 
 assign [title="qt-calendar"] $ws3
+assign [class="calendar.google.com"] $ws3
+assign [instance="calendar.google.com"] $ws3
 
 assign [title="qt-blackboard"] $ws8
 assign [class="cmus"] $ws9

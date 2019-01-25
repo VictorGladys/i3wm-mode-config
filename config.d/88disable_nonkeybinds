@@ -50,7 +50,7 @@ bindcode 54 nop
 # bindcode 55 nop
 # bindcode 56 nop # b
 bindcode 57 nop
-bindcode 58 nop
+# bindcode 58 nop # m
 # bindcode 59 nop # comma
 bindcode 60 nop
 # bindcode 61 nop # slash
